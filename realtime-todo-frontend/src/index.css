@@ -1,0 +1,45 @@
+:root {
+  --font-main: "Montserrat", sans-serif;
+  --text-dark: #111827;
+  --text-light: #374151;
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --bg-light: #f8fafc;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}

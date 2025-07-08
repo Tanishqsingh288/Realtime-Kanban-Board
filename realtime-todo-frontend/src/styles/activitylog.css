@@ -1,0 +1,90 @@
+.activity-log-panel {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex: 1 1 100%;
+}
+
+.activity-log-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
+}
+
+.activity-log {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.activity-log::-webkit-scrollbar {
+  width: 6px;
+}
+
+.activity-log::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 3px;
+}
+
+.activity-log::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+@media (min-width: 600px) {
+  .activity-log-panel {
+    flex: 0 0 250px;
+  }
+
+  .activity-log-header {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .activity-log-panel {
+    flex: 0 0 300px;
+  }
+
+  .activity-log-header {
+    font-size: 1.3rem;
+  }
+}
+
+.activity-log-panel {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex: 1 1 100%;
+  max-width: 100%;
+  min-width: 280px;
+}
+
+.activity-log-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.activity-log {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+@media (min-width: 600px) {
+  .activity-log-panel {
+    flex: 1 1 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .activity-log-panel {
+    flex: 0 0 250px;
+    max-width: 250px;
+    align-self: stretch;
+  }
+}

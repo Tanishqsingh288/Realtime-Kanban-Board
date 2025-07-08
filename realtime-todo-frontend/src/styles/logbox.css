@@ -1,0 +1,84 @@
+.log-box {
+  background: #f9fafb;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+
+.log-box p {
+  margin: 0;
+}
+
+.log-action {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.log-time {
+  display: block;
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.log-create {
+  border-left: 4px solid #22c55e;
+}
+
+.log-update {
+  border-left: 4px solid #eab308;
+}
+
+.log-delete {
+  border-left: 4px solid #ef4444;
+}
+
+.log-smart-assign {
+  border-left: 4px solid #3b82f6;
+}
+
+.activity-log {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.activity-log::-webkit-scrollbar {
+  width: 6px;
+}
+
+.activity-log::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 3px;
+}
+
+.activity-log::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+@media (min-width: 600px) {
+  .log-box {
+    font-size: 0.95rem;
+  }
+
+  .log-time {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .log-box {
+    font-size: 1rem;
+  }
+
+  .log-time {
+    font-size: 0.85rem;
+  }
+}

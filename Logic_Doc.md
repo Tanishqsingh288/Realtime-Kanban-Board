@@ -148,7 +148,3 @@ Also, every action gets logged (who did what, when) in the **Activity Log**, so 
 
 ---
 
-## ⚡ That’s it!
-
-These two logics — **Smart Assign** & **Conflict Handling** — make teamwork smoother and prevent big headaches.
-Feel free to tweak or improve them as the project grows. 🙌

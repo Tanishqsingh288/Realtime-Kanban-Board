@@ -1,20 +1,18 @@
+# 🚀 Real-Time Collaborative Kanban Board (Dockerized MERN + Socket.IO)
 
-# 🚀 Real-Time Collaborative To-Do Board (Dockerized MERN + Socket.IO)
-
-Welcome! This is a **production-ready, real-time collaborative Kanban board** inspired by tools like Trello/Jira — fully built with the **MERN stack**, **Socket.IO** for live sync, and **Docker** for easy deployment on any machine.
+Welcome to your **production-ready, real-time collaborative Kanban board** — inspired by tools like Trello/Jira and fully built with the **MERN stack**, **Socket.IO** for live sync, and **Docker** for easy deployment anywhere.
 
 ---
 
 ## 📌 Project Overview
 
-* **What it does:**
-  ✅ Users can **register** & **log in** securely
-  ✅ Create, edit, drag, and delete tasks on a **Kanban-style board** (Todo, In Progress, Done)
-  ✅ **Real-time updates** with Socket.IO — see every change live
-  ✅ **Smart Assign**: automatically assigns tasks to the user with the fewest active tasks
-  ✅ **Conflict Handling**: detects and resolves concurrent edits
-  ✅ **Activity Log**: shows last 20 actions for team accountability
-  ✅ **Fully containerized** with **Docker Compose**
+✅ **Register & login securely**
+✅ **Create, edit, drag, and delete tasks** on a Kanban-style board (*Todo, In Progress, Done*)
+✅ **Real-time updates** with Socket.IO — see changes instantly
+✅ **Smart Assign:** auto-assigns tasks to the user with the fewest active tasks
+✅ **Conflict Handling:** detects and resolves concurrent edits with user-friendly modals
+✅ **Activity Log:** displays the last 20 actions for accountability
+✅ **Fully containerized:** simple `docker-compose up` & down
 
 ---
 
@@ -27,19 +25,19 @@ Welcome! This is a **production-ready, real-time collaborative Kanban board** in
 | Database         | MongoDB (Docker container)          |
 | Auth             | JWT + bcrypt                        |
 | Containerization | Docker, Docker Compose              |
-| Deployment       | Vercel (frontend), Render (backend) |
+| Deployment       | Railway for both frontend & backend |
 
 ---
 
 ## 🐳 Dockerized Architecture
 
-The whole project runs as **three Docker containers**:
+Runs as **three Docker containers**:
 
-* **MongoDB**: runs a local database with volume persistence
-* **Backend API**: Node.js + Express server
-* **Frontend**: React app
+* **MongoDB:** local database with volume persistence
+* **Backend API:** Node.js + Express + Socket.IO
+* **Frontend:** React app
 
-> No complex local setup — just clone, configure `.env`, and run `docker-compose up`.
+> ✅ No complex local setup — clone, configure `.env`, and run `docker-compose up`.
 
 ---
 
@@ -49,22 +47,18 @@ The whole project runs as **three Docker containers**:
 
 ```bash
 git clone https://github.com/Tanishqsingh288/Realtime-Kanban-Board.git
-cd Realtime-Kanban-Board.git
+cd Realtime-Kanban-Board
 ```
-
----
 
 ### 2️⃣ Add Your Environment Variables
 
-Create a `.env` file in your backend folder:
+Create a `.env` file inside your backend folder:
 
 ```env
 MONGO_URI=mongodb://mongo:27017/LiveCommonBoard
-JWT_SECRET=12345
+JWT_SECRET=your_jwt_secret
 CLIENT_URL=http://localhost:3000
 ```
-
----
 
 ### 3️⃣ Run with Docker Compose
 
@@ -72,77 +66,55 @@ CLIENT_URL=http://localhost:3000
 docker-compose up --build
 ```
 
-* MongoDB: [http://localhost:27017](http://localhost:27017) (via containers, no direct browser access)
+* MongoDB: runs on container only
 * Backend API: [http://localhost:5000](http://localhost:5000)
 * Frontend: [http://localhost:3000](http://localhost:3000)
 
-Visit your **Kanban board** on [http://localhost:3000](http://localhost:3000) ✨
+Visit your board at [http://localhost:3000](http://localhost:3000) ✨
 
 ---
 
-## ✅ Features & Usage
+## ✅ Key Features & Logic
 
-* **Secure Auth**: Register/Login with JWT token-based auth.
-* **Kanban Board**: 3 columns, drag & drop tasks.
-* **Smart Assign**: Click “Smart Assign” → task auto-assigned to the least busy user.
-* **Conflict Handling**: If two users edit the same task, a modal shows both versions to merge or overwrite.
-* **Activity Log**: See who did what, updated live via Socket.IO.
-* **Dockerized**: Portable, works the same on any OS.
+### Smart Assign
 
----
+When you click **Smart Assign**:
 
-## 🤖 Smart Assign Logic (How it works)
-
-When “Smart Assign” is clicked:
-
-* Backend checks all tasks with status **Todo** or **In Progress**
+* Backend checks all tasks with status Todo/In Progress
 * Groups tasks by user, counts active ones
-* Assigns the task to the user with the **fewest tasks**
+* Assigns to the user with the fewest tasks
 * Broadcasts the update to all connected clients in real-time.
 
----
+### Conflict Handling
 
-## ⚔️ Conflict Handling Logic
+Each task has a `lastModified` timestamp:
 
-Each task has a **lastModified** timestamp:
-
-* If User A edits a task & User B edits the same task before A saves:
-
-  * Backend compares timestamps → mismatch triggers **409 Conflict**
-  * Both versions are sent to the client
-  * A modal lets the user merge changes or overwrite.
+* If two users edit the same task concurrently → backend detects mismatch → sends both versions back.
+* User sees a modal with both versions to merge or overwrite.
 
 ---
 
 ## 🔗 Live Deployment
 
-| Layer      | URL                                              |
-| ---------- | ------------------------------------------------ |
-| Frontend   | [Railway Link](https://accomplished-inspiration-production-3e58.up.railway.app)  |
-| Backend    | [Railway Link](https://realtime-kanban-board-production.up.railway.app) |
-| Demo Video | [Watch Here](https://your-demo-video-link.com)   |
+| Layer      | URL                                                                                                                                |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Frontend   | [https://accomplished-inspiration-production-3e58.up.railway.app](https://accomplished-inspiration-production-3e58.up.railway.app) |
+| Backend    | [https://realtime-kanban-board-production.up.railway.app](https://realtime-kanban-board-production.up.railway.app)                 |
+| Demo Video | *Add your demo video link here*                                                                                                    |
 
 ---
 
-## 📄 Logic Document
+## 📄 Additional Resources
 
-Read `Logic_Document.md` in this repo for a 1-page explanation of Smart Assign & Conflict Handling — clear & ready for submission.
-
----
-
-## 📸 Demo Video
-
-Watch the full 5–10 min walkthrough here: [Demo Video](https://your-demo-video-link.com)
-Includes:
-
-* Project overview
-* Live login/register
-* Drag & drop tasks
-* Real-time updates with multiple browsers
-* Smart Assign demo
-* Conflict handling in action
+✅ **Logic\_Document.md** — clear explanation of Smart Assign & Conflict Handling.
+✅ **Demo Video** — shows login, real-time sync, Smart Assign, conflict handling.
 
 ---
+
+## 🙌 Author
+
+Built with ❤️ by **Tanishq Singh**
+[GitHub](https://github.com/Tanishqsingh288/Realtime-Kanban-Board) · [LinkedIn](https://www.linkedin.com/in/tanishq-singh-3249b135b/)
 
 ## 📝 License
 
@@ -150,16 +122,8 @@ Open source under [MIT License](LICENSE).
 
 ---
 
-## 🙌 Author
-
-Built with ❤️ by **Tanishq Singh**
-[GitHub](https://github.com/YOUR_USERNAME) | [LinkedIn](https://linkedin.com/in/YOUR_LINKEDIN)
-
----
-
 ## ⚡ Quick Start for Reviewers
 
-✅ Clone → ✅ Add `.env` → ✅ `docker-compose up` → ✅ Visit `localhost:3000` → ✅ Test real-time sync in multiple tabs.
+✅ Clone → ✅ Add `.env` → ✅ `docker-compose up` → ✅ Visit `localhost:3000` → ✅ Test real-time sync.
 
 Enjoy your **real-time collaborative Kanban board**! 🗂️🚀✨
->>>>>>> 78ea17157378277ba5b7ae42644841f479fc27f0

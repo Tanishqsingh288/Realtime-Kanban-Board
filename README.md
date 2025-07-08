@@ -106,7 +106,7 @@ Each task has a `lastModified` timestamp:
 
 ## 📄 Additional Resources
 
-✅ **Logic\_Document.md** — clear explanation of Smart Assign & Conflict Handling.
+✅ **[Logic\_Document.md](https://github.com/Tanishqsingh288/Realtime-Kanban-Board/blob/main/Logic_Doc.md)** — clear explanation of Smart Assign & Conflict Handling.
 ✅ **Demo Video** — shows login, real-time sync, Smart Assign, conflict handling.
 
 ---

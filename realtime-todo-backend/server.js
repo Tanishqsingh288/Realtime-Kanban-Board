@@ -19,8 +19,8 @@ const server = http.createServer(app);
 
 // ✅ 2. Configure CORS BEFORE routes
 app.use(cors({
-  origin: process.env.CLIENT_URL,
-  credentials: true
+  origin: process.env.CLIENT_URL ||'https://accomplished-inspiration-production-3e58.up.railway.app',
+  credentials: true,
 }));
 
 app.use(express.json());

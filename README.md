@@ -98,9 +98,9 @@ Each task has a `lastModified` timestamp:
 
 | Layer      | URL                                                                                                                                |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| **Live URL**   | [https://accomplished-inspiration-production-3e58.up.railway.app](https://accomplished-inspiration-production-3e58.up.railway.app) |
-| Backend    | [https://realtime-kanban-board-production.up.railway.app](https://realtime-kanban-board-production.up.railway.app)                 |
-| Demo Video | *Add your demo video link here*                                                                                                    |
+| **Live URL**   | [Click here](https://accomplished-inspiration-production-3e58.up.railway.app) |
+| Backend    | [Click here](https://realtime-kanban-board-production.up.railway.app)                 |
+| Demo Video | [Click here](https://www.youtube.com/watch?v=tk_93gHZFDA)                                                                                                    |
 
 ---
 
